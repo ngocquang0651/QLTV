@@ -4,7 +4,10 @@
 package controller;
 
 import model.Book;
+import model.BookReadermanagerment;
+import model.Reader;
 
+import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -30,6 +33,19 @@ void writeBookToFile (Book book, String fileName){
     openFileToWrite(fileName);
     printWriter.println(book.getBookID()+"|"+book.getBookName()+"|"+book.getAuthor()+"|"+book.getSpecialization()
     +"|"+book.getPublishYear()+"|"+book.getQuantity());
+    closeFileAfterWrite(fileName);
+}
+
+void writeReaderToFile(Reader reader, String fileName){
+    openFileToWrite(fileName);
+    printWriter.println(reader.getReaderID()+"|"+reader.getFullName()+"|"+reader.getAddress()
+            +"|"+reader.getPhoneNumber());
+    closeFileAfterWrite(fileName);
+}
+void writeBRMToFile(BookReadermanagerment brm, String fileName){
+    openFileToWrite(fileName);
+    printWriter.println(brm.getBooks().getBookID()+"|"+brm.getReaders().getReaderID()+"|"+brm.getNumberOfBorrow()+"|"
+    +brm.getState()+"|"+brm.getTotal());
     closeFileAfterWrite(fileName);
 }
 

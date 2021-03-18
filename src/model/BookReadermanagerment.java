@@ -51,7 +51,18 @@ public class BookReadermanagerment {
         this.books = books;
         this.readers = readers;
         this.numberOfBorrow = numberOfBorrow;
-        State = state;
+        this.State = state;
         this.total = total;
+    }
+
+    @Override
+    public String toString() {
+        return "BookReadermanagerment{" +
+                "books=" + books +
+                ", readers=" + readers +
+                ", numberOfBorrow=" + numberOfBorrow +
+                ", State='" + State + '\'' +
+                ", total=" + total +
+                '}';
     }
 }
